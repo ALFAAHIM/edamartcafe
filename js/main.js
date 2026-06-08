@@ -4,10 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     
     window.addEventListener('scroll', () => {
+        // Navbar scroll effect
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+        
+        // WhatsApp CTA visibility (hidden in hero page)
+        const whatsappCta = document.getElementById('whatsapp-cta');
+        if (whatsappCta) {
+            if (window.scrollY > window.innerHeight * 0.8) {
+                whatsappCta.classList.add('visible');
+            } else {
+                whatsappCta.classList.remove('visible');
+            }
         }
     });
 

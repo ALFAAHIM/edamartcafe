@@ -428,6 +428,44 @@ img {
     }
 }
 
+/* Floating WhatsApp CTA */
+.whatsapp-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* WhatsApp Green, but let's make it premium */
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    
+    /* Hidden by default in hero */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.whatsapp-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-cta.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .split-layout, .split-layout.reverse, .footer-layout {
